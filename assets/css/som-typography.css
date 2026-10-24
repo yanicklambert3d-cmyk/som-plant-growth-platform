@@ -1,0 +1,2 @@
+:root{--bs-body-font-family:"Lora",Georgia,serif;--bs-font-sans-serif:"Lora",Georgia,serif}body,h1,h2,h3,h4,h5,h6,p,a,label,button,input,select,textarea,.btn,.form-control,#mainNav,.modal,.som-tracker-marker,.som-tracker-label,.som-tracker-state,.som-flow-status,#estado{font-family:"Lora",Georgia,serif!important}input::file-selector-button{font-family:"Lora",Georgia,serif!important}
+.navbar .navbar-brand{font-weight:400!important}
