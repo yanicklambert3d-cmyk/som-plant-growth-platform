@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded',function(){
  function render(updateBar=true){
   tracker.querySelectorAll('[data-som-step]').forEach(item=>{const n=Number(item.dataset.somStep),done=n<=stage,current=n===stage+1;item.classList.toggle('is-complete',done);item.classList.toggle('is-current',current);item.classList.toggle('is-pending',!done&&!current);item.querySelector('.som-tracker-marker').textContent=done?'✓':String(n);item.querySelector('.som-tracker-state').textContent=done?'Completed':current?'Current step':'Pending';if(current)item.setAttribute('aria-current','step');else item.removeAttribute('aria-current');});
   if(updateBar)tracker.style.setProperty('--som-progress',percent(stage));
-  status.textContent=stage===0?'Step 1: complete your diary and choose Prepare diary and continue.':stage===1?'Your diary is ready. Click Upload in Step 2 to submit it.':'Diary received. Open and complete the questionnaire in Step 3.';
+  if(status)status.textContent=stage===0?'Step 1: complete your diary and choose Prepare diary and continue.':stage===1?'Your diary is ready. Click Upload in Step 2 to submit it.':'Diary received. Open and complete the questionnaire in Step 3.';
   if(questionnaire){questionnaire.setAttribute('aria-disabled',stage<2?'true':'false');questionnaire.classList.toggle('som-awaiting-upload',stage<2);}
  }
  function transition(next,animate=true){
@@ -22,6 +22,6 @@ document.addEventListener('DOMContentLoaded',function(){
  document.addEventListener('som:diary-invalidated',()=>transition(0,false));
  document.addEventListener('som:diary-uploaded',()=>transition(2,true));
  document.addEventListener('som:diary-submission-restored',()=>transition(2,false));
- if(questionnaire)questionnaire.addEventListener('click',event=>{if(stage<2){event.preventDefault();status.textContent='Submit your diary using Upload in Step 2 before starting the questionnaire.';return;}status.textContent='Questionnaire opened in another tab. Complete it there; this page cannot verify its submission.';});
+ if(questionnaire)questionnaire.addEventListener('click',event=>{if(stage<2){event.preventDefault();if(status)status.textContent='Submit your diary using Upload in Step 2 before starting the questionnaire.';return;}if(status)status.textContent='Questionnaire opened in another tab. Complete it there; this page cannot verify its submission.';});
  render();
 });
