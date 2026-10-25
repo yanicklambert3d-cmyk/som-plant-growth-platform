@@ -36,7 +36,22 @@ function render(){
 function go(page){if(busy)return;const email=$('email');if(email&&!email.checkValidity()){email.reportValidity();return;}diary.currentPage=Math.max(0,Math.min(M.labels.length-1,page));changed();render();$('page').focus({preventScroll:true});}
 $('page').addEventListener('input',e=>{const t=e.target;if(t.dataset.field==='email')diary.email=t.value;else if(t.dataset.germ)diary.germination[t.dataset.germ][Number(t.dataset.index)]=t.value;else if(t.hasAttribute('data-intention'))diary.germination.intention=t.value;else if(t.dataset.entry)diary.entries[diary.currentPage-5][t.dataset.entry]=t.value;else if(t.dataset.choice)diary[t.dataset.choice]=Number(t.value);else return;diary.submission=null;diary.prepared=null;diary.contentVersion++;window.SOMDiaryUpload.clearPrepared();changed();});
 $('page').addEventListener('click',e=>{const t=e.target.closest('button');if(!t)return;if(t.dataset.clearChoice){diary[t.dataset.clearChoice]=null;diary.submission=null;diary.prepared=null;diary.contentVersion++;window.SOMDiaryUpload.clearPrepared();changed();render();}if(t.dataset.jump)go(Number(t.dataset.jump));});
-async function addPhoto(){const input=$('photo'),file=input.files[0],index=diary.currentPage-5;if(!file)return;if(!['image/jpeg','image/png','image/webp'].includes(file.type)||file.size>15*1024*1024){message('Escolhe uma imagem JPG, PNG ou WebP até 15 MB.',true);input.value='';return;}setBusy(true);message('A preparar a fotografia…');const url=URL.createObjectURL(file);try{const img=new Image();img.src=url;await img.decode();const scale=Math.min(1,1400/Math.max(img.naturalWidth,img.naturalHeight));const canvas=document.createElement('canvas');canvas.width=Math.max(1,Math.round(img.naturalWidth*scale));canvas.height=Math.max(1,Math.round(img.naturalHeight*scale));const ctx=canvas.getContext('2d');ctx.fillStyle='#fff';ctx.fillRect(0,0,canvas.width,canvas.height);ctx.drawImage(img,0,0,canvas.width,canvas.height);diary.entries[index].photo=canvas.toDataURL('image/jpeg',.78);diary.submission=null;diary.prepared=null;diary.contentVersion++;window.SOMDiaryUpload.clearPrepared();changed();render();await save();}catch(_){message('Não foi possível abrir esta imagem. Experimenta JPG ou PNG.',true);}finally{URL.revokeObjectURL(url);setBusy(false);}}
+function readPhoto(file){return new Promise((resolve,reject)=>{const reader=new FileReader();reader.onload=()=>resolve(reader.result);reader.onerror=()=>reject(reader.error||Error('File read failed'));reader.onabort=()=>reject(Error('File read cancelled'));reader.readAsDataURL(file);});}
+function loadPhoto(source){return new Promise((resolve,reject)=>{const img=new Image();img.onload=()=>resolve(img);img.onerror=()=>reject(Error('Image format could not be decoded'));img.src=source;});}
+async function addPhoto(){
+ const input=$('photo'),file=input.files[0],index=diary.currentPage-5;if(!file||busy)return;
+ if(!['image/jpeg','image/png','image/webp'].includes(file.type)||file.size>15*1024*1024){message('Escolhe uma imagem JPG, PNG ou WebP até 15 MB.',true);input.value='';return;}
+ setBusy(true);message('A preparar a fotografia…');
+ try{
+  const img=await loadPhoto(await readPhoto(file));if(!img.naturalWidth||!img.naturalHeight)throw Error('Empty image');
+  const scale=Math.min(1,1400/Math.max(img.naturalWidth,img.naturalHeight)),canvas=document.createElement('canvas');
+  canvas.width=Math.max(1,Math.round(img.naturalWidth*scale));canvas.height=Math.max(1,Math.round(img.naturalHeight*scale));
+  const ctx=canvas.getContext('2d');if(!ctx)throw Error('Canvas unavailable');ctx.fillStyle='#fff';ctx.fillRect(0,0,canvas.width,canvas.height);ctx.drawImage(img,0,0,canvas.width,canvas.height);
+  const photo=canvas.toDataURL('image/jpeg',.78);if(!photo.startsWith('data:image/jpeg;base64,'))throw Error('Image conversion failed');
+  diary.entries[index].photo=photo;diary.submission=null;diary.prepared=null;diary.contentVersion++;window.SOMDiaryUpload.clearPrepared();changed();render();await save();
+ }catch(error){console.error('SOM diary: photograph processing failed',error);message('Não foi possível abrir esta imagem. Experimenta JPG ou PNG.',true);input.value='';}
+ finally{setBusy(false);}
+}
 function dateName(){const d=new Date();return [d.getFullYear(),String(d.getMonth()+1).padStart(2,'0'),String(d.getDate()).padStart(2,'0')].join('-');}
 async function submitDiary(){
  if(busy)return;setBusy(true);message('A preparar o diário para o Step 2…');
