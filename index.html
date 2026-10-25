@@ -17,12 +17,13 @@
 <link rel="stylesheet" href="assets/css/som-study-progress.css">
 <link rel="stylesheet" href="assets/css/som-typography.css">
 <link rel="stylesheet" href="assets/css/som-step-layout.css">
+<link rel="stylesheet" href="assets/css/som-diary-modal.css">
 </head>
 
 <body id="page-top" data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="77">
     <nav class="navbar navbar-expand-md fixed-top" id="mainNav">
         <div class="container">
-            <div style="display: none;object-fit: fill;background-position: center;background-size: contain;background-repeat: no-repeat;width: 30px;height: 50px;background-image: url('assets/img/iconSOM.png');"></div><a class="navbar-brand" href="#">seed of memories<h1 style="font-size: .65rem;">file Manager</h1></a><button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" type="button" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation" value="Menu"><i class="fa fa-bars"></i></button>
+            <div style="display: none;object-fit: fill;background-position: center;background-size: contain;background-repeat: no-repeat;width: 30px;height: 50px;background-image: url('assets/img/iconSOM.png');"></div><a class="navbar-brand" href="#">seed of memories<h1 style="font-size: .65rem;">Diary System</h1></a><button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" type="button" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation" value="Menu"><i class="fa fa-bars"></i></button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item nav-link"><a class="nav-link active" href="#about">About</a></li>
@@ -48,15 +49,14 @@
             <div class="row">
                 <div class="col-lg-8 mx-auto" style="color: rgb(23,61,0);border-bottom: 1px solid rgba(3,157,0,0.51);">
                     <h1>About the platform</h1>
-                    <p><br>This platform allows you to <strong>download your plant diary</strong>, fill it in daily as you care for your plant, and <strong>upload it back</strong> once completed.</p>
+                    <p>Complete your <strong>plant diary online</strong> in English or Portuguese, add your daily observations and photographs, and <strong>submit it</strong> once completed.</p>
                     <p>After finishing the VR experience Seed Of Memories (SOM), you will use this system to track your plant growth.<br><br></p>
                     <p></p>
                 </div>
             </div>
         </div>
         <div class="container" id="download" style="margin-top: 20px;"><div class="som-step-tracker" role="group" aria-label="Diary progress"><div class="som-tracker-line" aria-hidden="true"><span></span></div><div class="som-tracker-item" data-som-step="1"><span class="som-tracker-marker" aria-hidden="true">1</span><span class="som-tracker-label">Step 1</span><span class="som-tracker-state"></span></div><div class="som-tracker-item" data-som-step="2"><span class="som-tracker-marker" aria-hidden="true">2</span><span class="som-tracker-label">Step 2</span><span class="som-tracker-state"></span></div><div class="som-tracker-item" data-som-step="3"><span class="som-tracker-marker" aria-hidden="true">3</span><span class="som-tracker-label">Step 3</span><span class="som-tracker-state"></span></div></div><p id="som-flow-status" class="som-flow-status" role="status" aria-live="polite"></p>
-            <div class="row" id="som-study-steps"><div id="som-step-1" class="som-step-column"><div class="som-action-icon som-action-icon-download" style="background-image: url(&quot;assets/img/diaryIcon.png&quot;);" aria-hidden="true"></div><p class="som-step-heading"><strong>Download your diary</strong></p><p class="som-step-description"><span style="color:#0b8c00">Download the diary and record your daily plant care and observations. Upload it to the </span><span style="color:#0b8c00"><strong>upload section</strong></span><span style="color:#0b8c00"> once completed.</span></p><div class="som-step-actions"><div class="som-action-spacer" aria-hidden="true"></div><button id="download-diary" type="button" data-bs-toggle="modal" data-bs-target="#diary-language-modal" style="min-width:150px;border-radius:50px;padding:12px 18px;margin:0;font-weight:700;" class="btn btn-primary">Download</button></div></div><div id="som-step-2" class="som-step-column"><div class="som-action-icon som-action-icon-upload" style="background-image: url(&quot;assets/img/diaryIcon.png&quot;);" aria-hidden="true"></div><p class="som-step-heading"><strong>Upload your diary</strong></p><p class="som-step-description"><span style="color:rgb(11, 140, 0)">Click “</span><span style="color:rgb(11, 140, 0)"><strong>Choose File”</strong></span><span style="color:rgb(11, 140, 0)"> to select your completed diary. </span>
-<span style="color:rgb(11, 140, 0)">Then click “</span><span style="color:rgb(11, 140, 0)"><strong>Upload</strong></span><span style="color:rgb(11, 140, 0)">” to submit the file.</span></p><form id="formUpload" method="post" enctype="multipart/form-data" class="som-step-actions"><input id="ficheiro" name="ficheiro" style="width:70%;display:inline;border-radius:20px;border:3px solid rgba(0,182,0,0.23);color:#07b407;font-size:.85rem;" accept=".pdf,application/pdf" required type="file"><input value="Upload" style="width:150px;height:50px;margin:0;border-radius:50px;font-weight:700;" type="submit" class="btn btn-primary"><progress id="barraProgresso" value="0" max="100" aria-label="Diary upload progress" style="width:100%;height:10px;display:none"></progress><div id="estado" role="status" aria-live="polite" style="font-size:.85rem;margin-top:10px"></div></form></div><div id="som-step-3" class="som-step-column"><div class="som-action-icon som-action-icon-survey" style="background-image: url(&quot;assets/img/survey.png&quot;);" aria-hidden="true"></div><p class="som-step-heading"><strong>Answer the questionnaire</strong></p><p class="som-step-description"><span style="color:rgb(11, 140, 0)">Complete the </span><span style="color:rgb(11, 140, 0)"><strong>Connection to Nature questionnaire</strong></span><span style="color:rgb(11, 140, 0)"> about your relationship with nature after the caring for the plant.</span></p><div class="som-step-actions"><div class="som-action-spacer" aria-hidden="true"></div><a id="downloadBtn-1" type="button" href="https://forms.cloud.microsoft/r/SDvV5BgUZq" target="_blank" style="width:150px;border-radius:50px;padding:12px 18px;margin:0;font-weight:700;" class="btn btn-primary">Start</a></div></div></div>
+            <div class="row" id="som-study-steps"><div id="som-step-1" class="som-step-column"><div class="som-action-icon som-action-icon-download" style="background-image: url(&quot;assets/img/diaryIcon.png&quot;);" aria-hidden="true"></div><p class="som-step-heading"><strong>Complete your diary</strong></p><p class="som-step-description">Fill in your diary online in English or Portuguese.</p><div class="som-step-actions"><div class="som-action-spacer" aria-hidden="true"></div><button id="som-diary-open" type="button" class="btn btn-primary" style="min-width:150px;border-radius:50px;padding:12px 18px;margin:0;font-weight:700;">Open diary</button></div></div><div id="som-step-2" class="som-step-column"><div class="som-action-icon som-action-icon-upload" style="background-image: url(&quot;assets/img/diaryIcon.png&quot;);" aria-hidden="true"></div><p class="som-step-heading"><strong>Upload your diary</strong></p><p class="som-step-description">Prepare your diary, then click Upload to submit it.</p><form id="formUpload" method="post" enctype="multipart/form-data" class="som-step-actions"><div class="som-action-spacer" aria-hidden="true"></div><input disabled value="Upload" style="width:150px;height:50px;margin:0;border-radius:50px;font-weight:700;" type="submit" class="btn btn-primary"><progress id="barraProgresso" value="0" max="100" aria-label="Diary upload progress" style="width:100%;height:10px;display:none"></progress><div id="estado" role="status" aria-live="polite" style="font-size:.85rem;margin-top:10px"></div></form></div><div id="som-step-3" class="som-step-column"><div class="som-action-icon som-action-icon-survey" style="background-image: url(&quot;assets/img/survey.png&quot;);" aria-hidden="true"></div><p class="som-step-heading"><strong>Answer the questionnaire</strong></p><p class="som-step-description"><span style="color:rgb(11, 140, 0)">Complete the </span><span style="color:rgb(11, 140, 0)"><strong>Connection to Nature questionnaire</strong></span><span style="color:rgb(11, 140, 0)"> about your relationship with nature after the caring for the plant.</span></p><div class="som-step-actions"><div class="som-action-spacer" aria-hidden="true"></div><a id="downloadBtn-1" type="button" href="https://forms.cloud.microsoft/r/SDvV5BgUZq" target="_blank" style="width:150px;border-radius:50px;padding:12px 18px;margin:0;font-weight:700;" class="btn btn-primary">Start</a></div></div></div>
         </div>
     </section>
     <section class="text-center content-section" id="contact" style="background-color: #011c00;padding-top: 50px;padding-bottom: 50px;/*height: 10px;*//*display: none;*/">
@@ -66,7 +66,7 @@
                     <h2>Contact us</h2>
                     <p>Feel free to contact us.</p>
                     <ul class="list-inline banner-social-buttons">
-                        <li class="list-inline-item">&nbsp;<button class="btn btn-primary btn-lg btn-default" type="button" style="border-radius: 50px;"><i class="fa fa-envelope fa-fw"></i><span>email</span></button></li>
+                        <li class="list-inline-item">&nbsp;<a class="btn btn-primary btn-lg btn-default" href="mailto:lambertyanick@gmail.com" style="border-radius: 50px;"><i class="fa fa-envelope fa-fw"></i><span>email</span></a></li>
                         <li class="list-inline-item" style="display: none;">&nbsp;<button class="btn btn-primary btn-lg btn-default" type="button"><i class="fa fa-github fa-fw"></i><span>&nbsp;github</span></button></li>
                     </ul>
                 </div>
@@ -75,7 +75,7 @@
     </section>
     <footer style="background-color: #001400;">
         <div class="container text-center">
-            <p style="color: green;">Copyright ©&nbsp;SEED OF MEMORIES 2025</p>
+            <p style="color: green;" data-copyright-year>Copyright ©&nbsp;SEED OF MEMORIES 2026</p>
         </div>
     </footer>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
@@ -83,9 +83,18 @@
     
     
 <script src="assets/js/som-diary-upload.js"></script>
-<div class="modal fade" id="diary-language-modal" tabindex="-1" aria-labelledby="diary-language-title" aria-hidden="true"><div class="modal-dialog modal-dialog-centered"><div class="modal-content" style="border-radius:20px;background:#eef7e7;color:#173d00"><div class="modal-header"><h2 class="modal-title fs-5" id="diary-language-title">Choose your diary language</h2><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div><div class="modal-body text-center"><p>Select the version you want to download.</p><div style="display:flex;justify-content:center;gap:12px;flex-wrap:wrap"><a class="btn btn-success" href="Download/som-plant-diary-en.pdf" download="som-plant-diary-en.pdf" hreflang="en" style="border-radius:30px;padding:12px 20px" rel="noopener">English</a><a class="btn btn-success" href="Download/som-plant-diary.pdf" download="som-plant-diary.pdf" hreflang="pt" style="border-radius:30px;padding:12px 20px" rel="noopener">Português</a></div></div></div></div></div>
 <script src="assets/js/som-study-progress.js"></script>
-<script src="assets/js/som-diary-download.js"></script>
+
+<dialog id="som-diary-modal" aria-labelledby="som-diary-title"><div class="shell"><header class="head"><div><small>SEED OF MEMORIES</small><h2 id="som-diary-title">Cultivar o Cuidado</h2></div><div class="header-actions"><button class="secondary close" id="som-diary-close" aria-label="Guardar e fechar o diário">×</button></div></header><nav class="journey" aria-label="Navegação do diário"><label for="som-diary-page-select">Percurso</label><select id="som-diary-page-select"></select><label class="visually-hidden" for="som-diary-language">Idioma do diário</label><select id="som-diary-language" aria-label="Idioma do diário"><option value="pt">Português</option><option value="en">English</option></select><span id="som-diary-page-counter"></span><div class="journey-line"><span id="som-diary-journey-progress"></span></div></nav><div class="body" id="som-diary-scroll-area"><section id="som-diary-page" aria-live="off" tabindex="-1"></section><p class="storage-note">As alterações são guardadas automaticamente neste navegador e dispositivo.</p></div><footer><div class="save-state"><p id="som-diary-status" role="status" aria-live="polite">A preparar o diário…</p><button type="button" class="text" id="som-diary-save">Guardar agora</button></div><div class="page-actions"><button type="button" class="secondary" id="som-diary-previous">Anterior</button><button type="button" id="som-diary-next">Seguinte</button></div></footer></div></dialog>
+<script src="assets/js/pdf-lib.min.js"></script>
+
+<script src="assets/js/som-diary-pdf-images.js"></script>
+<script src="assets/js/som-diary-i18n.js"></script>
+<script src="assets/js/som-diary-model.js"></script>
+<script src="assets/js/som-diary-pdf-en.js"></script>
+<script src="assets/js/som-diary-pdf.js"></script>
+<script src="assets/js/som-diary-app.js"></script>
+<script src="assets/js/som-copyright.js"></script>
 </body>
 
 </html>

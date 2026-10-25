@@ -1,0 +1,211 @@
+#som-diary-modal{font-family:Lora,Georgia,serif;color:#193c0c;background:#e2f2ce;line-height:1.6}
+#som-diary-modal *{box-sizing:border-box}
+#som-diary-modal button,#som-diary-modal input,#som-diary-modal textarea,#som-diary-modal select{font:inherit}
+#som-diary-modal button{cursor:pointer;border:0;border-radius:28px;background:#36d7a0;color:#123d19;padding:10px 20px;font-weight:700;transition:background .18s}
+#som-diary-modal button:hover{background:#6eebbb}
+#som-diary-modal button:focus-visible,#som-diary-modal select:focus-visible,#som-diary-modal input:focus-visible,#som-diary-modal textarea:focus-visible,#som-diary-modal summary:focus-visible{outline:3px solid #198957;outline-offset:3px}
+#som-diary-modal button:disabled{opacity:.5;cursor:wait}
+#som-diary-modal h2{font-size:23px;margin:3px 0}
+#som-diary-modal h3{font-size:21px;line-height:1.45;margin:0 0 16px}
+#som-diary-modal h4{font-size:16px;margin:0 0 8px}
+#som-diary-modal small,#som-diary-modal .eyebrow{font-size:11px;letter-spacing:1.6px}
+#som-diary-modal .note{font-size:12px;color:#527047}
+#som-diary-modal{padding:0;border:1px solid #accb98;border-radius:22px;width:min(1120px,calc(100% - 32px));max-height:calc(100dvh - 32px);color:inherit;background:#f7fbf0;overflow:hidden}
+#som-diary-modal::backdrop{background:#03180dd9;backdrop-filter:blur(5px)}
+#som-diary-modal .shell{display:flex;flex-direction:column;height:min(820px,calc(100dvh - 34px))}
+#som-diary-modal .head{display:flex;align-items:center;justify-content:space-between;padding:14px 28px;background:#e2f2ce;border-bottom:1px solid #cfdfbe;flex-shrink:0}
+#som-diary-modal .close{font-family:Arial,sans-serif;font-size:28px;line-height:1;padding:8px 13px}
+#som-diary-modal .journey{padding:10px 28px 0;display:flex;align-items:center;gap:12px;flex-wrap:wrap;flex-shrink:0;background:#edf5e5}
+#som-diary-modal .journey label{font-size:12px}
+#som-diary-modal .journey select{font-size:13px;max-width:75%;padding:5px 10px;background:#fff;border:1px solid #b5cda6;border-radius:8px;color:inherit}
+#som-diary-modal .journey #som-diary-page-counter{margin-left:auto;font-size:12px}
+#som-diary-modal .journey-line{width:100%;height:3px;background:#d4e3c8}
+#som-diary-modal .journey-line span{display:block;height:100%;background:#25966b;transition:width .2s}
+#som-diary-modal .body{overflow:auto;padding:24px 28px;flex:1;min-height:0}
+#som-diary-modal .page-top{margin-bottom:22px}
+#som-diary-modal .page-top p{color:#527047;font-size:14px;max-width:75ch}
+#som-diary-modal .grid{display:grid;grid-template-columns:1.1fr 1fr;gap:32px}
+#som-diary-modal .grid.equal{grid-template-columns:1fr 1fr}
+#som-diary-modal .card{background:#fff;border:1px solid #d2dfc7;border-radius:14px;padding:18px}
+#som-diary-modal .cover{text-align:center;max-width:660px;margin:auto}
+#som-diary-modal .cover img{height:155px;max-width:150px;object-fit:contain}
+#som-diary-modal .cover h3{font-size:32px;margin:10px 0}
+#som-diary-modal .cover label{text-align:left;margin-top:24px}
+#som-diary-modal .principles{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:20px}
+#som-diary-modal .principles p{font-size:13px;margin:0}
+#som-diary-modal .relation-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+#som-diary-modal .relation{cursor:pointer;position:relative;background:#fff;border:2px solid #d6e3cd;border-radius:14px;padding:12px;display:flex;align-items:center;flex-direction:column;font-size:12px}
+#som-diary-modal .relation:has(input:checked){border-color:#168c60;background:#e8f5de;box-shadow:0 0 0 2px #168c6022}
+#som-diary-modal .relation img{width:100%;height:105px;object-fit:contain}
+#som-diary-modal .relation input{accent-color:#168c60;margin:10px 0}
+#som-diary-modal .relation-clear{margin-top:12px}
+#som-diary-modal .word-group{border:1px solid #d2dfc7;border-radius:14px;background:#fff;padding:18px;margin-bottom:16px}
+#som-diary-modal .word-group .word-title{font-size:16px;font-weight:700;text-align:center;margin:0 0 10px}
+#som-diary-modal .word-group p{font-size:13px;color:#527047;margin:0 0 10px;clear:both}
+#som-diary-modal .words{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+#som-diary-modal .words label span{font-size:11px;color:#527047}
+#som-diary-modal label{display:block;font-size:14px}
+#som-diary-modal input[type=email],#som-diary-modal input[type=date],#som-diary-modal input[type=text],#som-diary-modal textarea{border:1px solid #adc79d;border-radius:10px;padding:10px;background:white;color:#193c0c;width:100%;min-width:0}
+#som-diary-modal textarea{margin-top:8px;resize:vertical;min-height:140px}
+#som-diary-modal input{margin-top:4px}
+#som-diary-modal .dates{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:18px}
+#som-diary-modal .photo-title{margin-top:0}
+#som-diary-modal .photo{border:1px dashed #81ad6e;border-radius:14px;background:#eaf3df;aspect-ratio:16/10;display:flex;align-items:center;justify-content:center;text-align:center;cursor:pointer;overflow:hidden}
+#som-diary-modal .photo:hover{background:#dfeecf}
+#som-diary-modal .photo img{width:100%;height:100%;object-fit:contain}
+#som-diary-modal .photo b{display:block;font-size:36px;line-height:1.5}
+#som-diary-modal input[type=file]{max-width:100%;font-size:12px;margin-top:10px}
+#som-diary-modal input::file-selector-button{font:inherit;border:0;padding:8px;background:#d5eac1;border-radius:8px;cursor:pointer}
+#som-diary-modal input::file-selector-button:hover{background:#36d7a0}
+#som-diary-modal .text{padding:4px 0;background:transparent;font-size:12px;text-decoration:underline}
+#som-diary-modal .storage{margin-top:26px;padding:13px 17px;border-radius:12px;border:1px solid #d3dfc7;font-size:12px;color:#527047}
+#som-diary-modal .storage summary{cursor:pointer;color:#31571e;font-weight:700}
+#som-diary-modal .backup{display:flex;gap:10px;flex-wrap:wrap}
+#som-diary-modal .secondary{background:#e2edda;border:1px solid #c1d5b2}
+#som-diary-modal .backup button{font-size:12px;padding:7px 14px}
+#som-diary-modal footer{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:12px 28px;border-top:1px solid #cfdfbe;background:#edf5e5;flex-shrink:0}
+#som-diary-modal footer p{font-size:12px;margin:0;max-width:65ch}
+#som-diary-modal .save-state{flex:1;min-width:0}
+#som-diary-modal .page-actions{display:flex;gap:10px}
+#som-diary-modal .page-actions button{white-space:nowrap}
+#som-diary-modal .thanks{text-align:center;background:#e2f2ce;padding:20px;border-radius:14px;margin-top:24px}
+#som-diary-modal .review-list{list-style:none;padding:0;margin:16px 0}
+#som-diary-modal .review-list li{padding:10px 0;border-bottom:1px solid #dbe5d2;display:flex;align-items:center;justify-content:space-between;gap:12px;font-size:13px}
+#som-diary-modal .review-list button{font-size:12px;padding:5px 12px}
+#som-diary-modal .review-list span{color:#527047}
+#som-diary-modal .export-actions{display:flex;gap:12px;flex-wrap:wrap}
+#som-diary-modal .warning{border-left:3px solid #b68b2c;padding:8px 14px;background:#faf4de;font-size:13px}
+#som-diary-modal .error{color:#9c3025}
+#som-diary-modal [hidden]{display:none!important}
+@media (max-width:760px){#som-diary-modal{width:calc(100% - 16px);max-height:calc(100dvh - 16px)}}
+@media (max-width:760px){#som-diary-modal .shell{height:calc(100dvh - 18px)}}
+@media (max-width:760px){#som-diary-modal .head,#som-diary-modal .body,#som-diary-modal footer{padding:14px 16px}}
+@media (max-width:760px){#som-diary-modal .journey{padding:10px 16px 0}}
+@media (max-width:760px){#som-diary-modal .grid,#som-diary-modal .grid.equal{grid-template-columns:1fr;gap:20px}}
+@media (max-width:760px){#som-diary-modal .principles{grid-template-columns:1fr}}
+@media (max-width:760px){#som-diary-modal .relation-grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:760px){#som-diary-modal .relation img{height:85px}}
+@media (max-width:760px){#som-diary-modal .words{gap:8px}}
+@media (max-width:760px){#som-diary-modal .words input{padding:8px;font-size:13px}}
+@media (max-width:760px){#som-diary-modal h2{font-size:19px}}
+@media (max-width:760px){#som-diary-modal h3{font-size:19px}}
+@media (max-width:760px){#som-diary-modal .cover h3{font-size:28px}}
+@media (max-width:760px){#som-diary-modal footer{align-items:center;gap:8px}}
+@media (max-width:760px){#som-diary-modal footer p{font-size:10px}}
+@media (max-width:760px){#som-diary-modal .page-actions{gap:6px}}
+@media (max-width:760px){#som-diary-modal .page-actions button{padding:9px 11px;font-size:12px}}
+#som-diary-modal .choice-fieldset{border:0;padding:0;margin:0}
+#som-diary-modal .choice-fieldset>legend{font-size:13px;color:#527047;margin-bottom:15px}
+#som-diary-modal .cover>.eyebrow{display:block}
+#som-diary-modal .relation-grid{grid-template-columns:repeat(3,minmax(0,1fr));max-width:none;margin-inline:auto}
+#som-diary-modal .relation img{height:140px;object-fit:contain}
+#som-diary-modal .diary-divider{display:flex;align-items:center;justify-content:center;gap:14px;margin:12px 0 18px;width:100%;clear:both}
+#som-diary-modal .diary-divider>img{display:block;flex:0 1 110px;width:110px;max-width:19%;height:auto;object-fit:contain}
+#som-diary-modal .diary-divider .diary-divider-mirror{transform:scaleX(-1)}
+#som-diary-modal .diary-divider>p{margin:0!important;flex:0 1 auto;min-width:0;text-align:center;color:#00a98e!important;font-size:13px;line-height:1.5}
+#som-diary-modal .diary-divider--plain{gap:0;margin:12px 0 20px;justify-content:space-between}
+#som-diary-modal .diary-divider--plain>span{display:none}
+#som-diary-modal .sense-icon{display:block;width:58px;height:58px;object-fit:contain;margin:0 auto 16px}
+#som-diary-modal .word-group{min-width:0}
+#som-diary-modal .word-group .words>label{min-width:0}
+#som-diary-modal .word-group .diary-divider{margin-top:8px;margin-bottom:14px}
+#som-diary-modal .word-group .diary-divider>p{font-size:12px}
+#som-diary-modal .word-group .words{clear:both}
+#som-diary-modal .intention-group{text-align:center}
+#som-diary-modal .intention-group textarea{text-align:left}
+#som-diary-modal .intention-group .sense-icon{margin-top:10px;margin-bottom:14px}
+@media (max-width:760px){#som-diary-modal .relation img{height:110px}}
+@media (max-width:760px){#som-diary-modal .diary-divider{gap:8px}}
+@media (max-width:760px){#som-diary-modal .diary-divider>img{width:76px;flex-basis:76px;max-width:17%}}
+@media (max-width:760px){#som-diary-modal .diary-divider>p{font-size:12px}}
+@media (max-width:760px){#som-diary-modal .sense-icon{width:50px;height:50px}}
+@media (max-width:760px){#som-diary-modal .word-group{padding:15px}}
+@media (max-width:760px){#som-diary-modal .word-group .diary-divider{gap:6px}}
+#som-diary-modal .cover{max-width:none;padding:30px clamp(20px,5vw,64px);border-radius:16px;background:#004719 url('../img/BannerWebSOM_BG.png') center/cover;color:#fff}
+#som-diary-modal .cover h3,#som-diary-modal .cover label{color:#fff}
+#som-diary-modal .cover>.eyebrow,#som-diary-modal .cover .note{color:#e2f2ce}
+#som-diary-modal .cover>p{max-width:68ch;margin-inline:auto}
+#som-diary-modal .cover label,#som-diary-modal .cover input{max-width:650px;margin-inline:auto}
+#som-diary-modal .cover input{display:block;color:#193c0c}
+#som-diary-modal .cover>.note{margin-bottom:0}
+#som-diary-modal .word-group .word-title{padding:0 8px;line-height:1.5}
+#som-diary-modal .diary-divider--plain{gap:0}
+@media (max-width:760px){#som-diary-modal .relation-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:760px){#som-diary-modal .cover{padding:24px 20px}}
+@media (max-width:760px){#som-diary-modal .cover h3{font-size:26px}}
+@media (max-width:760px){#som-diary-modal .word-group .word-title{font-size:15px}}
+#som-diary-modal .cover .cover-subtitle{font-size:15px;letter-spacing:1px;color:#e2f2ce;margin:8px auto 24px;line-height:1.6}
+#som-diary-modal .visually-hidden{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
+#som-diary-modal .welcome-copy{font-size:14px;line-height:1.6;color:#527047}
+#som-diary-modal .welcome-copy + .diary-divider{margin-top:34px}
+#som-diary-modal .principles .card{position:relative;overflow:hidden;padding-left:22px}
+#som-diary-modal .principles .card::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:#68a62f;border-radius:14px 0 0 14px}
+#som-diary-modal .principles .card p{font-size:12px;line-height:1.6}
+#som-diary-modal .principles .card h4{color:#68a62f}
+@media (min-width:761px){#som-diary-modal .daily-grid{grid-template-rows:auto minmax(200px,auto) auto;row-gap:12px}}
+@media (min-width:761px){#som-diary-modal .daily-grid>.daily-notes,#som-diary-modal .daily-grid>.daily-photo{display:grid;grid-template-rows:subgrid;grid-row:1/span 3;min-width:0}}
+@media (min-width:761px){#som-diary-modal .daily-grid>.daily-notes{grid-column:1}}
+@media (min-width:761px){#som-diary-modal .daily-grid>.daily-photo{grid-column:2}}
+@media (min-width:761px){#som-diary-modal .daily-heading{grid-row:1;align-self:end}}
+@media (min-width:761px){#som-diary-modal .daily-grid textarea,#som-diary-modal .daily-grid .photo{grid-row:2;margin:0;width:100%;height:100%;min-height:200px;aspect-ratio:auto}}
+@media (min-width:761px){#som-diary-modal .daily-photo-controls{grid-row:3}}
+#som-diary-modal .photo-placeholder-icon{display:block;margin:0 auto 12px;color:currentColor}
+#som-diary-modal .head{position:relative;overflow:hidden;isolation:isolate}
+#som-diary-modal .head::before{content:"";position:absolute;top:0;bottom:0;right:38px;width:min(36%,320px);background:url('../img/diary/flowers_top.png') right bottom/auto 100% no-repeat;mask-image:linear-gradient(to right,transparent,#000 45%);-webkit-mask-image:linear-gradient(to right,transparent,#000 45%);pointer-events:none;z-index:0}
+#som-diary-modal .head>div,#som-diary-modal .head>.close{position:relative;z-index:1}
+@media (max-width:760px){#som-diary-modal .head::before{width:145px;right:26px;opacity:.55}}
+#som-diary-modal .header-actions{display:flex;align-items:center;gap:12px}
+#som-diary-modal .header-actions select{font-family:inherit;font-size:12px;border:1px solid #afc99c;border-radius:18px;background:#edf5e5;color:#193c0c;padding:6px 10px}
+#som-diary-modal .header-actions .close{position:relative;z-index:1}
+@media (max-width:760px){#som-diary-modal .header-actions{gap:5px}}
+@media (max-width:760px){#som-diary-modal .header-actions select{max-width:100px;padding:5px;font-size:11px}}
+body:has(#som-diary-modal[open]){overflow:hidden}
+#som-study-steps .som-step-actions>#download-diary{grid-row:3;min-width:0!important;height:auto!important;padding:0!important;border:0!important;background:transparent!important;color:#31571e;font-size:.75rem;text-transform:none;text-decoration:underline;border-radius:0!important;font-weight:400!important}
+#som-diary-modal h2,#som-diary-modal h3,#som-diary-modal h4,#som-diary-modal button{text-transform:none;letter-spacing:normal}
+
+/* Cores explícitas para impedir a herança do tema da plataforma */
+#som-diary-modal{color:#193c0c;font-size:16px}
+#som-diary-modal h2,#som-diary-modal h3,#som-diary-modal h4,#som-diary-modal small,#som-diary-modal .eyebrow,#som-diary-modal label,#som-diary-modal select,#som-diary-modal option,#som-diary-modal .journey,#som-diary-modal .journey span,#som-diary-modal .relation span{color:#193c0c!important}
+#som-diary-modal p{color:#527047}
+#som-diary-modal .welcome-copy p{font-size:14px!important;line-height:1.6;color:#527047!important;margin:0 0 16px}
+#som-diary-modal .principles .card h4{color:#68a62f!important}
+#som-diary-modal .principles .card p{font-size:12px!important}
+#som-diary-modal footer p,#som-diary-modal .storage,#som-diary-modal .storage summary{color:#31571e!important}
+#som-diary-modal .cover h3,#som-diary-modal .cover label{color:#fff!important}
+#som-diary-modal .cover .cover-subtitle,#som-diary-modal .cover .note{color:#e2f2ce!important}
+#som-diary-modal .journey #som-diary-language{margin-left:auto;max-width:145px;background:#fff;color:#193c0c!important}
+#som-diary-modal .journey #som-diary-page-counter{margin-left:0}
+#som-diary-modal .head::before{right:50px;width:min(34%,280px)}
+#som-study-steps .som-step-description{color:#0b8c00!important}
+@media(max-width:760px){#som-diary-modal .journey #som-diary-language{max-width:105px;font-size:11px}#som-diary-modal .journey #som-diary-page-select{max-width:55%}}
+
+/* Flores simétricas no agradecimento, apenas no desktop */
+@media(min-width:761px){
+#som-diary-modal .thanks{position:relative;isolation:isolate;overflow:hidden;min-height:130px;padding:24px clamp(130px,18%,200px)}
+#som-diary-modal .thanks::before,#som-diary-modal .thanks::after{content:"";position:absolute;top:0;bottom:0;width:clamp(120px,20%,210px);background:url('../img/diary/flowers_top.png') right bottom/auto 100% no-repeat;mask-image:linear-gradient(to right,transparent,#000 55%);-webkit-mask-image:linear-gradient(to right,transparent,#000 55%);pointer-events:none;z-index:0}
+#som-diary-modal .thanks::before{left:0;transform:scaleX(-1)}
+#som-diary-modal .thanks::after{right:0}
+#som-diary-modal .thanks>strong,#som-diary-modal .thanks>p{position:relative;z-index:1}
+}
+
+#som-diary-modal .review-actions{display:flex;align-items:center;gap:24px;flex-shrink:0}
+#som-diary-modal .review-marker{display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;border:2px solid currentColor;border-radius:50%;font-size:21px;font-weight:700;line-height:1}
+#som-diary-modal .review-marker.is-complete{color:#279b43!important;background:#edf8e6}
+#som-diary-modal .review-marker.is-incomplete{color:#a87b00!important;background:#fff5cb}
+#som-diary-modal .submit-only{justify-content:center;margin:24px 0 10px}
+#som-diary-modal .submit-note{text-align:center}
+#som-diary-modal .storage-note{font-size:12px;color:#527047;margin-top:24px}
+#formUpload.som-upload-received #barraProgresso{display:none!important}
+#formUpload.som-upload-received #estado{grid-row:3;font-weight:700;color:#31571e}
+@media(max-width:760px){#som-diary-modal .review-actions{gap:12px}}
+
+/* Energia entre os passos: preparação e confirmação do envio */
+html.som-energy-view{scroll-behavior:auto!important}
+.som-step-tracker .som-tracker-line span{transition:width 1.4s ease-in-out,box-shadow .3s ease;}
+.som-step-tracker .som-tracker-line::after{content:"";position:absolute;left:var(--som-energy-from,0%);top:50%;width:20px;height:20px;transform:translate(-50%,-50%);border-radius:50%;background:#e8ffbc;box-shadow:0 0 12px #b6ff63,0 0 24px #37f48a,0 0 40px rgba(55,244,138,.7);opacity:0;pointer-events:none;transition:left 1.4s ease-in-out,opacity .18s ease}
+.som-step-tracker.is-energizing .som-tracker-line::after{left:var(--som-energy-to,50%);opacity:1}
+.som-step-tracker.is-energizing .som-tracker-line span{background:linear-gradient(90deg,#244c0b,#54cf32,#53efad);box-shadow:0 0 12px rgba(101,244,81,.9)}
+.som-step-tracker .som-tracker-item.is-arriving .som-tracker-marker{box-shadow:0 0 14px #b6ff63,0 0 30px rgba(55,244,138,.8);transform:scale(1.18)}
+#formUpload>[type="submit"]:disabled{opacity:.5;cursor:default}
+#formUpload.som-upload-ready>[type="submit"]{box-shadow:0 0 14px rgba(54,215,160,.35)}
+@media(prefers-reduced-motion:reduce){.som-step-tracker .som-tracker-line span{transition:none}.som-step-tracker .som-tracker-line::after{display:none}.som-step-tracker .som-tracker-marker{transition:none}}
