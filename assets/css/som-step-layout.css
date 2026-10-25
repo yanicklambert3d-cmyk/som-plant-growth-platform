@@ -17,3 +17,4 @@
 @media(max-width:767.98px){#ficheiro{width:90%!important}}
 #ficheiro::file-selector-button{cursor:pointer;transition:background-color .2s ease, color .2s ease}
 #ficheiro::file-selector-button:hover{background-color:#36d7a0;color:#173d00}
+#formUpload #estado{color:#1c4012}
